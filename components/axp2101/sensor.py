@@ -7,8 +7,8 @@ from esphome.const import (
     CONF_BRIGHTNESS,
     CONF_ID,
     CONF_MODEL,
-    DEVICE_CLASS_BATTERY_CHARGING,
     DEVICE_CLASS_BATTERY,
+    DEVICE_CLASS_BATTERY_CHARGING,
     DEVICE_CLASS_VOLTAGE,
     ENTITY_CATEGORY_DIAGNOSTIC,
     ICON_BATTERY,
@@ -62,7 +62,7 @@ def to_code(config):
     yield cg.register_component(var, config)
     yield i2c.register_i2c_device(var, config)
 
-    cg.add_library("XPowersLib", "^0.3.2", "https://github.com/lewisxhe/XPowersLib.git")
+    cg.add_library("XPowersLib", "^0.3.3", "https://github.com/lewisxhe/XPowersLib.git")
 
     cg.add(var.set_model(config[CONF_MODEL]))
 
